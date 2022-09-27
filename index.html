@@ -42,7 +42,38 @@
                 <source src="" type="video/mp4">
             </video>   
              <section class="fullscreen text-content">
-                <h1 style="font-family: derk; text-shadow: 0 0 0.40em #00FF00;">Skidcrew</h1>
+                 <script>
+$(document).ready(function () {
+
+$("#bannerShit").jrumble({
+    x: 7,
+    y: 7,
+    rotation: 4,
+    });
+
+    $('#bannerShit').hover(function() {
+        $("#bannerShit").trigger('startRumble');
+    }, function() {
+        $("#bannerShit").trigger('stopRumble');
+    });
+
+$('#bannerShit').hover(
+    function() {
+        var $this = $(this); // caching $(this)
+        $this.data('initialText', $this.text());
+        $this.text("Join The Nazi Party!");
+    },
+    function() {
+        var $this = $(this); // caching $(this)
+        $this.text($this.data('initialText'));
+    }
+);
+
+
+});
+
+</script>
+                <h1 id="bannerShit"style="font-family: derk; text-shadow: 0 0 0.40em #00FF00;">Skidcrew</h1>
                <div class='test-fix'>
                     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
                     <div data-netlify-identity-button>Login</div>
